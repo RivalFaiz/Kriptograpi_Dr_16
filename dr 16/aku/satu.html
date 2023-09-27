@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <input type="checkbox"  id="myCheckbox">
+
+     
+</body>
+<script>
+     // Fungsi untuk melakukan tindakan yang diperlukan saat perubahan terjadi
+          function lakukanFungsi() {
+               // Letakkan logika Anda di sini
+               console.log( "Perubahan terjadi!" );
+          };
+          function lakukanFungsi1() {
+               // Letakkan logika Anda di sini
+               console.log( "Perubahan terjadi!asdasdasdsad" );
+          };
+
+          // Inisialisasi nilai default dan tambahkan event listener saat halaman dimuat
+     
+          // Inisialisasi nilai default di sini
+          // Misalnya, jika Anda memiliki elemen dengan ID 'myCheckbox', Anda dapat menginisialisasinya seperti ini:
+          var myCheckbox = document.getElementById( 'myCheckbox' );
+          myCheckbox.checked = false; // Set nilai default menjadi dicentang
+
+          // Panggil fungsi saat halaman dimuat untuk menangani nilai default
+
+          
+
+          function satu(){
+               if ( myCheckbox.checked ) {
+
+                    lakukanFungsi();
+               } else {
+                    lakukanFungsi1();
+
+               }
+          }
+          satu();
+          
+          // Tambahkan event listener untuk mengikuti perubahan
+          myCheckbox.addEventListener( "change", satu );
+          
+
+</script>
+</html>

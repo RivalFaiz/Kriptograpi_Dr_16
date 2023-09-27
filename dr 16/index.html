@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Dr. 16</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital@1&family=Didact+Gothic&family=IBM+Plex+Serif:wght@200&family=Indie+Flower&family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500&family=Noto+Sans+Syriac+Eastern:wght@100;200;300;400;500;600;700;800;900&family=Pacifico&family=Patrick+Hand&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Ysabeau:ital,wght@0,1;0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,1;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap"
+     rel="stylesheet">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+     <link rel="stylesheet" href="css.css">
+
+ 
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <div class="container-fluid">
+          <a class="navbar-brand" href="#">Kriptosistem</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+               data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                         <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="#">Histori</a>
+                    </li>
+                    <li class="nav-item">
+                         <a class="nav-link" href="#">Kriptosistem :</a>
+                    </li>
+                    <li class="nav-item">
+                         <select class="form-select" id="selectOption" aria-label="Default select example">
+                              <option value="1">Caesar Chipper</option>
+                              <option value="2">Vigenere Chipper</option>
+                              <option value="3">PlayFair Chipper</option>
+                              <option value="4">Dr 16 Chipper</option>
+                         </select>
+                    </li>
+
+               </ul>
+               <div class="d-flex align-items-center">Created By &nbsp;<span> Dr 16</span>
+               </div>
+          </div>
+     </div>
+</nav>
+
+     <div class="k enkripsi">
+
+          <label for="exampleNumber" class="form-label">Kunci :</label>
+          <input type="number" class="form-control" id="exampleNumber" placeholder="Masukkan Kunci" required>
+
+          <div class="d-flex justify-content-between align-items-center">
+               <label for="modeSwitch">Pilih Mode : </label>
+               <div class="form-check form-switch d-flex align-items-center">
+                    <input class="form-check-input margin-right-20px" type="checkbox" checked id="modeSwitch">
+               </div>
+               <label for="modeSwitch" id="idMode">Mode: <span>Real Time</span></label>
+          </div>
+             
+             
+          
+     </div>
+
+     <div class="wraper">
+          <div class="fungsi">
+               <div class="enkripsi function">
+                    <p>Encryption Function</p>
+                    <div class="input">
+                         <form action="" id="enk">
+                              <section>
+
+                                   <textarea id="inputen" required placeholder="Input here..."></textarea>
+                                   <div class="hapus">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                   </div>
+                                   <button type="submit" class="btn btn-success"><i class="fa-solid fa-paper-plane"></i></button>
+                                   
+                              </section>
+                         </form>
+                    </div>
+                    <div class="txt">
+                         <div class="plain">Plaintext :</div>                      
+                         <div id="t"></div> 
+                    </div>
+                     
+     
+                    <div class="txt dua" >
+                         <div class="cp">
+
+                              <div class="plain">Chippertext :</div>
+                              <button id="copyButton" type="button" class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
+                                   <i class="fa-solid fa-copy"></i> 
+                              </button>
+
+
+                         </div>
+
+                         <div id="popup" class="popup"></div>
+                         <div id="tt" class="akhir"></div>
+                         
+     
+                    </div>
+               </div>
+               <div class="enkripsi function">
+                    <p>Dekripsi Function</p>
+                    <div class="input">
+                         <form action="" id="dek">
+                              <section>
+
+                                   <textarea id="inputdek" required placeholder="Input here..."></textarea>
+                                   <div class="hapus">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                   </div>
+                                   <button type="submit" class="btn btn-success"><i class="fa-solid fa-paper-plane"></i></button>
+                              </section>
+                         </form>
+                    </div>
+                    <div class="txt">
+                         <div class="plain">Chippertext :</div>
+                         <div id="td"></div>
+                         
+                    </div>
+     
+                    <div class="txt dua">
+
+                         <div class="cp">
+                              <div class="plain">Plaintext :</div>
+                              
+                              <button id="copyButton" type="button"
+                                   class="btn btn-outline-secondary d-flex align-items-center justify-content-center">
+                                   <i class="fa-solid fa-copy"></i>
+                              </button>
+                         </div>
+                         <div id="popup" class="popup"></div>
+                         <div id="ttd" class="akhir" ></div>
+                         
+     
+                    </div>
+               </div>
+     
+               
+     
+          </div>
+     </div>
+     <div class="card mb-3 mx-auto mt-3" style="max-width: 100vw;" >
+          <div class="row g-0 playfair" >
+               <div class="col-md-4">
+                    <table id="matrixTable"></table>
+                    
+               </div>
+               <div class="col-md-8 ml-5">
+                    <div class="card-body">
+                         <h5 class="card-title">Matriks Kunci</h5>
+                         <p class="card-text">
+                         
+                         Matriks Kunci pada <mark>PlayFair Chipper</mark> dibuat dengan karakter <em>uniq</em> dari kunci yang diberikan. <br>
+                         Pada Website ini <b>tidak</b> menggunakan matriks 5x5 seperti biasa, akan tetapi menggunakan <b>matriks 10x10</b> untuk perluasan karakter. <br><br>
+                         Pada Website ini digunakan <b>"Δ"</b> sebegai karakter untuk mengganti karakter yang sama pada pasangan dan untuk menambah karakter pada karakter <em>single</em>
+                         
+                         Matriks kunci pada <mark>PlayFair Chipper</mark> digunakan untuk melakukan <em>Enkripsi</em> dan <em>Enkripsi.</em><br>
+
+                         
+                         </p>
+                         <p class="text-muted">
+                              Baca lebih lanjut: <a href="#" class="text-reset">PlayFair Chipper</a>.
+                         </p>
+                         <figure>
+                              <blockquote class="blockquote">
+                                   <p>Penjelasan tentang <b>Kriptosistem</b> tersedia di Website kami </p>
+                              </blockquote>
+                              <figcaption class="blockquote-footer">
+                                   Creator: <cite title="Source Title">Dr 16</cite>
+                              </figcaption>
+                         </figure>
+                    </div>
+               </div>
+          </div>
+
+          <div class="row g-0 caesar">
+<div class="col-md-4">
+     
+
+          <h4 id="caesarP">Kunci : <span></span></h4><br>
+          <h4>Enkripsi</h4>
+          <h4 id="caesarE">"a" + <span id="satu"></span> = ( 65 + <span id="tiga"> </span> ) mod 100 = <span
+                    id="empat"></span> = <span id="lima"></span></h4>
+     
+</div>
+
+
+
+               <div class="col-md-8 ml-5">
+                    <div class="card-body">
+                         <h5 class="card-title">Kunci Caesar</h5>
+                         <p class="card-text">
+                         
+                         Kunci pada <mark>Caesar Chipper</mark> digunakan untuk menggeser tiap karakter pada  <b>plaintext</b>. <br>
+                         Pada Website ini menggunakan <b>100</b> karakter yang masing masing mempunyai <b>index</b> <br><br>
+
+                         Matriks kunci pada <mark>Caesar Chipper</mark> digunakan untuk melakukan <em>Enkripsi</em> dan <em>Enkripsi.</em><br>
+                         Enkripsi dilakukan dengan <b>menjumlahkan</b> index tiap karakter dengan <b>kunci</b> lalu dicari sisabaginya dengan jumlah karakter (pada kali ini 100). <br>
+                         Dekripsi dilakukan dengan <b>mengurangkan</b> index tiap karakter dengan <b>kunci</b> lalu dicari sisabaginya dengan jumlah karakter (pada kali ini 100). <br>
+                         
+
+
+                         
+                         </p>
+                         <p class="text-muted">
+                              Baca lebih lanjut: <a href="#" class="text-reset">Caesar Chipper</a>.
+                         </p>
+                         <figure>
+                              <blockquote class="blockquote">
+                                   <p>Penjelasan tentang <b>Kriptosistem</b> tersedia di Website kami </p>
+                              </blockquote>
+                              <figcaption class="blockquote-footer">
+                                   Creator: <cite title="Source Title">Dr 16</cite>
+                              </figcaption>
+                         </figure>
+                    </div>
+               </div>
+          </div>
+          <div class="row g-0">
+               <div class="col-md-4">
+                    <table id="matrixTable"></table>
+                    
+               </div>
+               <div class="col-md-8 ml-5">
+                    <div class="card-body vigenere">
+                         <h5 class="card-title">Matriks Kunci</h5>
+                         <p class="card-text">
+                         
+                         Matriks Kunci pada <mark>PlayFair Chipper</mark> dibuat dengan karakter <em>uniq</em> dari kunci yang diberikan. <br>
+                         Pada Website ini <b>tidak</b> menggunakan matriks 5x5 seperti biasa, akan tetapi menggunakan <b>matriks 10x10</b> untuk perluasan karakter. <br><br>
+                         Pada Website ini digunakan <b>"Δ"</b> sebegai karakter untuk mengganti karakter yang sama pada pasangan dan untuk menambah karakter pada karakter <em>single</em>
+                         
+                         Matriks kunci pada <mark>PlayFair Chipper</mark> digunakan untuk melakukan <em>Enkripsi</em> dan <em>Enkripsi.</em><br>
+
+                         
+                         </p>
+                         <p class="text-muted">
+                              Baca lebih lanjut: <a href="#" class="text-reset">PlayFair Chipper</a>.
+                         </p>
+                         <figure>
+                              <blockquote class="blockquote">
+                                   <p>Penjelasan tentang <b>Kriptosistem</b> tersedia di Website kami </p>
+                              </blockquote>
+                              <figcaption class="blockquote-footer">
+                                   Creator: <cite title="Source Title">Dr 16</cite>
+                              </figcaption>
+                         </figure>
+                    </div>
+               </div>
+          </div>
+     </div>
+     
+     <script type="module" src="js.js" ></script> 
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

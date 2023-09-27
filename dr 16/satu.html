@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+<body>
+     <div id="k"></div>
+                              <!-- 1. Enkripsi -->
+                              <!-- <ul>
+                                                            <li>Teks yang akan dienkripsi akan di- <em>gruping</em> menjadi bentuk <em>fair</em> ( pasangan ).</li>
+                                                            <li>jika suatu pasangan memiliki karakter yang sama maka karakter pertama akan dipasangkan dengan "Δ" <mark> <em>dummy</em></mark> dan karakter kedua akan dipasangkan ke karakter selanjutnya.</li>
+                                                            <li>Jika terdapat karakter tunggal maka tambahkan dengan "Δ".</li>
+                                                            <li>Terdapat 3 kemungkinan:
+                                                                 <ol>
+                                                                      <li>Sepasang karakter terletak pada <b>baris</b> yang sama. </li>
+                                                                      <li>Sepasang karakter terletak pada <b>kolom</b> yang sama. </li>
+                                                                      <li>Sepasang karakter terletak pada baris dan kolom yang <b>berbeda</b>. </li>
+                                                                 </ol>
+                                                            </li>
+                                                            <li>untuk kemungkinan 1 maka enkripsi dilakukan dengan </li>
+                                                       </ul> -->
+
+
+     
+</body>
+<script>
+     let textList = Array.from( "assuua " );
+     let text="aku rival"
+     let text1=Array.from("aakku");
+     let text2=text1.join("")
+     for(let i=0;i<=text1.length-2;i++){
+          if (text1[i]==text1[i+1]){
+               text1[i]=text1[i]+"z";
+
+          }
+
+     }
+     let xx= text2.match( /.{1,2}/g );
+     const filteredNumbers = xx.filter( ( number ) => number.length==1 );
+     const filre=xx.filter((e)=> e.length==2)
+     
+
+
+
+     
+
+          // Tambahkan "z" pada setiap elemen yang lulus filter
+          const modifiedNumbers = filteredNumbers.map( ( number ) => number + "z" );
+
+
+          
+     
+
+
+
+
+
+          let kunciUniq = [];
+          for ( let i = 0; i < textList.length; i++ ) {
+               if ( !kunciUniq.includes( textList[ i ] ) ) {
+                    kunciUniq.push( textList[ i ] );
+               }
+          }
+
+          let kunciMatrix = [];
+          for ( let i = 0; i < 95; i++ ) {
+               if ( !kunciUniq.includes( String.fromCharCode( 32 + i ) ) ) {
+                    kunciUniq.push( String.fromCharCode( 32 + i ) );
+               }
+          }
+          kunciUniq.push("α","β","Δ","δ","ε")
+     let x=document.getElementById("k");
+     x.textContent=kunciUniq[kunciUniq.length-1];
+
+
+          const numRows = 10;
+          const numCols = 10;
+          const matrix = [];
+
+          for ( let i = 0; i < numRows; i++ ) {
+               const row = [];
+               for ( let j = 0; j < numCols; j++ ) {
+                    const value = kunciUniq[ i * numCols + j ];
+                    row.push( value );
+               }
+               matrix.push( row );
+          }
+
+          console.log( matrix );
+          function findElementPosition( matrix, targetValue ) {
+                    for ( let row = 0; row < matrix.length; row++ ) {
+                         for ( let col = 0; col < matrix[ row ].length; col++ ) {
+                              if ( matrix[ row ][ col ] === targetValue ) {
+                                   return { row, col };
+                              }
+                         }
+                    }
+                    return null; // Mengembalikan null jika elemen tidak ditemukan
+               }
+
+               const targetValue = "y"; // Angka yang ingin dicari
+                    const position = findElementPosition( matrix, targetValue );
+                    
+                         if ( position ) {
+                              console.log( `Elemen ${ targetValue } ditemukan pada baris ${ position.row } dan kolom ${ position.col }` );
+                         } else {
+                              console.log( `Elemen ${ targetValue } tidak ditemukan dalam matriks.` );
+                         }
+
+          
+
+
+     
+
+
+
+     
+
+
+     function playFair( text ) {
+               let textList = Array.from( text );
+               let keyList= Array.from("aku");
+
+
+               let kunciUniq = [];
+               for ( let i = 0; i < textList.length; i++ ) {
+                    if ( !kunciUniq.includes( textList[ i ] ) ) {
+                         kunciUniq.push( textList[ i ] );
+                    }
+               }
+
+               for ( let i = 0; i < 95; i++ ) {
+                    if ( !kunciUniq.includes( kunciMatrix[ i ] ) ) {
+                         kunciUniq.push( String.fromCharCode( 32 + i ) );
+                    }
+               }
+               kunciUniq.push( "α", "β", "Δ", "δ", "ε" );
+               const numRows = 10;
+               const numCols = 10;
+               const matrixKunci = [];
+
+               for ( let i = 0; i < numRows; i++ ) {
+                    const row = [];
+                    for ( let j = 0; j < numCols; j++ ) {
+                         const value = kunciUniq[ i * numCols + j ];
+                         row.push( value );
+                    }
+                    matrixKunci.push( row );
+               }
+
+               for ( let i = 0; i <= textList.length - 2; i++ ) {
+                    if ( textList[ i ] == textList[ i + 1 ] ) {
+                         textList[ i ] = textList[ i ] + "z";
+                         
+                    }
+
+                    
+               }
+               let resultArray = textList.join("").match( /.{1,2}/g );
+               for ( let i = 0; i <= resultArray.length -1; i++ ) {
+                    if ( resultArray[i].length==1 ) {
+                         resultArray[i]= resultArray[ i ] + "z";
+                         
+                    };
+
+                    
+               }
+               listKunciPosisi=[]
+
+     
+               
+          let resultArrayM = resultArray.map( e => Array.from( e ) );
+
+          let x = resultArrayM.map( e =>
+               e.map( el => {
+                    const positions = findElementPosition( matrix, el );
+                    return [ positions.row, positions.col ];
+               } )
+          );
+
+          for ( let i = 0; i < x.length; i++ ) {
+               if ( x[ i ][ 0 ][ 0 ] == x[ i ][ 1 ][ 0 ] ) {
+                    // Mengganti karakter kedua dengan karakter baru (contoh: menambah 1)
+                    const newCharacter1 =  (parseInt( x[ i ][ 0 ][ 1 ] ) + 1)%10 ;
+                    const newCharacter2 =  (parseInt( x[ i ][ 1 ][ 1 ] ) + 1)%10 ;
+                    x[ i ][ 0 ][ 1 ] = newCharacter1;
+                    x[ i ][ 1 ][ 1 ] = newCharacter2;
+
+               }else if( x[ i ][ 0 ][ 1 ] == x[ i ][ 1 ][ 1 ] ){
+                    const newCharacter1 =  (parseInt( x[ i ][ 0 ][ 0 ] ) + 1)%10 ;
+                    const newCharacter2 =  (parseInt( x[ i ][ 1 ][ 0 ] ) + 1)%10 ;
+                    x[ i ][ 0 ][ 0 ] = newCharacter1;
+                    x[ i ][ 1 ][ 0 ] = newCharacter2;
+                    
+               }else{
+                    const newCharacter1 =  (parseInt( x[ i ][ 1 ][ 1 ] )) ;
+                    const newCharacter2 =  (parseInt( x[ i ][ 0 ][ 1 ] )) ;
+                    x[ i ][ 0 ][ 1 ] = newCharacter1;
+                    x[ i ][ 1 ][ 1 ] = newCharacter2;
+
+               }
+          }
+
+          const flatList = x.reduce( ( acc, curr ) => {
+               return acc.concat( curr );
+          }, [] );
+
+          let hasil=[];
+          for ( let i = 0; i < flatList.length; i++ ){
+
+               hasil.push(matrix[flatList[i][0]][flatList[i][1]])
+          }
+          const hasilJoin=hasil.join("");
+
+
+
+               
+     
+
+     
+     
+               
+               
+          
+                    
+               
+                              
+
+               return {hasil, hasilJoin};
+
+
+
+
+
+
+
+
+
+
+          };
+
+          
+          console.log(playFair("rival").hasilJoin)
+
+
+
+
+
+</script>
+</html>
